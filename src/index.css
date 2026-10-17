@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    @apply antialiased text-stone-900 bg-white font-sans selection:bg-emerald-200 selection:text-emerald-950;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+/* Custom organic branch line patterns & tree connector styling */
+.tree-branch-line {
+  stroke-dasharray: 4 2;
+  animation: branchGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes branchGlow {
+  0% {
+    stroke-opacity: 0.4;
+  }
+  100% {
+    stroke-opacity: 0.85;
+  }
+}
+
+@keyframes treeLeafSway {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(4deg) scale(1.02);
+  }
+}
+
+@keyframes treeSapFlow {
+  0% {
+    stroke-dashoffset: 24;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-leaf-sway {
+  transform-origin: center;
+  animation: treeLeafSway 4s ease-in-out infinite;
+}
+
+.animate-sap-flow {
+  animation: treeSapFlow 2.5s linear infinite;
+}
+
+/* Certificate Print Styler */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #printable-certificate, #printable-certificate * {
+    visibility: visible;
+  }
+  #printable-certificate {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+    box-shadow: none;
+    border: 4px double #166534;
+  }
+}
+
+/* Custom scrollbar for visual tree & curriculum sidebar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.03);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 139, 0.25);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 116, 139, 0.4);
+}

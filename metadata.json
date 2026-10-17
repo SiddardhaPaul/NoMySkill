@@ -1,0 +1,6 @@
+{
+  "name": "ArborSkill - The Upskilling Tree Learning Platform",
+  "description": "An interactive online learning platform and course marketplace guided by the Upskilling Tree taxonomy, from Trunk to Branches, Twigs, and Leaves.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
